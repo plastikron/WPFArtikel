@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApplicationArtikel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplicationArtikel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" VerticalAlignment="Top" Width="497">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="comboBox_Art" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="130" ItemsSource="{Binding}"/>
+            <Label x:Name="l_ArtNr" Content="ArtNr" HorizontalAlignment="Left" Margin="10,7,0,0" Grid.Row="1" VerticalAlignment="Top" Width="52"/>
+            <Label x:Name="l_ArtBez" Content="ArtBez" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="52"/>
+            <Label x:Name="l_Bestand" Content="Bestand" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+            <Label x:Name="l_Preis" Content="Preis" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="52"/>
+            <Label x:Name="l_Menge" Content="Menge" HorizontalAlignment="Left" Margin="8,6,0,0" Grid.Row="5" VerticalAlignment="Top" RenderTransformOrigin="-0.62,0.232" Width="54"/>
+            <TextBox x:Name="textBox_ArtNr" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,11,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" Text="{Binding Path= SelectedItem.ArtNr, ElementName=comboBox_Art}"/>
+            <TextBox x:Name="textBox_ArtBez" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" Text="{Binding Path=SelectedItem.ArtBez, ElementName=comboBox_Art}"/>
+            <TextBox x:Name="textBox_Bestand" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,13,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" Text="{Binding Path=SelectedItem.Bestand, ElementName=comboBox_Art}"/>
+            <TextBox x:Name="textBox_Preis" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" Text="{Binding Path=SelectedItem.VPreis, ElementName=comboBox_Art}"/>
+            <TextBox x:Name="textBox_Menge" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="78"/>
+            <Button x:Name="button_kaufen" Click="button_kaufen_Click" Content="Kaufen" Grid.Column="1" HorizontalAlignment="Left" Margin="208,12,0,0" Grid.Row="5" VerticalAlignment="Top" Width="129"/>
+            <TextBox x:Name="textBox_Nachricht" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="487" Grid.ColumnSpan="2"/>
+
+        </Grid>
+    </Grid>
+</Window>
